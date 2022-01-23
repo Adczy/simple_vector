@@ -1,42 +1,46 @@
 #include "SimpleVector.h"
 
-SimpleVector::SimpleVector() { 
-    buf = new int[9999];
+template<class T>
+SimpleVector<T>::SimpleVector() { 
+    buf = new T[9999];
     count = 0; 
   }
   
-SimpleVector::~SimpleVector() { delete [] buf;}
+template<class T>
+SimpleVector<T>::~SimpleVector() { delete [] buf;}
 
-int SimpleVector::operator[](int pos) {return buf[pos];};
+template<class T>
+T SimpleVector<T>::operator[](int pos) {return buf[pos];};
 
-void SimpleVector::push_back(int item) { buf[count++] = item; }
-void SimpleVector::pop_back() { if (count == 0) return; else buf[--count] = 0x0; }
-bool SimpleVector::empty() {if(count == 0) return true; else return false;};
-void SimpleVector::clear()
+template<class T>
+void SimpleVector<T>::push_back(T item) { buf[count++] = item; }
+
+template<class T>
+void SimpleVector<T>::pop_back() { if (count == 0) return; else buf[--count]; }
+
+template<class T>
+bool SimpleVector<T>::empty() {if (count == 0) return true; else return false;};
+
+template<class T>
+void SimpleVector<T>::clear()
 {
-  for(int i = 0; i<count; i++)
+  /*for(int i = 0; i<count; i++)
   {
     buf[i] = 0x0;
-  }
+  }*/
   count = 0;
 }
-int SimpleVector::size() {return count;}
 
-ostream& operator<<(ostream& os, const SimpleVector& vec)
-{
-  for(int i=0; i<vec.count; i++)
-  {
-    os << vec.buf[i] << " ";
-  }
-  return os;
-}
+template<class T>
+int SimpleVector<T>::size() {return count;}
 
-SimpleVector SimpleVector::operator~(){
+template<class T>
+SimpleVector<T> SimpleVector<T>::operator~(){
   int end = count-1;
   int start = 0;
   while (start<end)
   {
-    int temp = buf[start];
+    T temp = buf[start];
     buf[start] = buf[end];
     buf[end] = temp;
     start++;
@@ -44,3 +48,9 @@ SimpleVector SimpleVector::operator~(){
   }
   return *this;
 }
+
+template class SimpleVector<string>;
+template class SimpleVector<int>;
+template class SimpleVector<char>;
+template class SimpleVector<double>;
+template class SimpleVector<float>;

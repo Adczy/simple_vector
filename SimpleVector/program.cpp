@@ -3,8 +3,9 @@
 
 int main()
 {
-  SimpleVector vec;
-  SimpleVector vec1;
+  SimpleVector<int> vec;
+  SimpleVector<int> vec1;
+  SimpleVector<char> vec2;
 
   cout << "wielkosc wektora: " << vec.size() << endl;
   cout << "czy wektor jest pusty: " << vec.empty() << endl;
@@ -57,5 +58,17 @@ int main()
   cout << "wielkosc wektora vec1: " << vec1.size() << endl;
   cout << "czy wektor jest pusty vec1: " << vec1.empty() << endl;
 
-  cout << "No siema" << endl;
+  vec2.push_back('e');
+  vec2.push_back('s');
+  vec2.push_back('s');
+  vec2.push_back('a');
+
+  cout << vec2[0] << " " << vec2[1] << " " << vec2[2] << " " << vec2[3] << endl;
+
+  cout << "wielkosc wektora: " << vec2.size() << endl;
+  cout << "czy wektor jest pusty: " << vec2.empty() << endl;
+
+  cout << "caly wektor: " << vec2 << endl;
+
+  cin.get();
 }
