@@ -56,4 +56,6 @@ int main()
   vec1.clear();
   cout << "wielkosc wektora vec1: " << vec1.size() << endl;
   cout << "czy wektor jest pusty vec1: " << vec1.empty() << endl;
+
+  cout << "No siema" << endl;
 }
