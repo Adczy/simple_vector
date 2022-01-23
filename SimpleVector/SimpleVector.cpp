@@ -26,9 +26,9 @@ void SimpleVector<T>::clear()
 {
   /*for(int i = 0; i<count; i++)
   {
-    buf[i] = 0x0;
-  }*/
-  count = 0;
+    buf[i] = NULL;
+  }
+  count = 0;*/
 }
 
 template<class T>

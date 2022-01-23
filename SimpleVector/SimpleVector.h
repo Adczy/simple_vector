@@ -33,4 +33,3 @@ std::ostream& operator<<(ostream &os, const SimpleVector<T> &vec)
   }
   return os;
 }
-//ostream& operator<<(ostream& os, const SimpleVector& vec);

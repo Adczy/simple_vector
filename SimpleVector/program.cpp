@@ -6,6 +6,7 @@ int main()
   SimpleVector<int> vec;
   SimpleVector<int> vec1;
   SimpleVector<char> vec2;
+  SimpleVector<string> vec3;
 
   cout << "wielkosc wektora: " << vec.size() << endl;
   cout << "czy wektor jest pusty: " << vec.empty() << endl;
@@ -69,6 +70,10 @@ int main()
   cout << "czy wektor jest pusty: " << vec2.empty() << endl;
 
   cout << "caly wektor: " << vec2 << endl;
+
+  vec3.push_back("essasito");
+
+  cout << vec3 << endl;
 
   cin.get();
 }
